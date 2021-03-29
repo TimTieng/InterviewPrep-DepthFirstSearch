@@ -25,6 +25,7 @@ namespace DepthFirstSearch
             {
                 root = null;
             }
+            // Method to print node values InOrder Traversal
             void PrintInOrder(Node node)
             {
                 if (node == null)
@@ -45,6 +46,35 @@ namespace DepthFirstSearch
             {
                 PrintInOrder(root);
             }
+            // Method to print node values in "PreOrder" Traversal
+            public void PrintPreOrder(Node node)
+            {
+                if (node == null)
+                {
+                    return;
+                }
+                Console.Write(node.key + ",");
+                PrintPreOrder(node.left);
+                PrintPreOrder(node.right);
+            }
+            public void PrintPreOrder()
+            {
+                PrintPreOrder(root);
+            }
+            public void PrintPostOrder(Node node)
+            {
+                if (node == null)
+                {
+                    return;
+                }
+                PrintPostOrder(node.left);
+                PrintPostOrder(node.right);
+                Console.Write(node.key + ",");
+            }
+            public void PrintPostOrder()
+            {
+                PrintPostOrder(root);
+            }
         }
         public static void Main(string[] args)
         {
@@ -56,9 +86,20 @@ namespace DepthFirstSearch
             Tree1.root.left.left = new Node(4);
             Tree1.root.left.right = new Node(5);
 
-            // InOrder Prompt
+            // InOrder Prompt - Should Return 4,2,5,1,3
             Console.WriteLine("Here is the Tree in Traversal Pattern: 'InOrder'");
             Tree1.PrintInOrder();
+            Console.WriteLine("\n");
+
+            // PreOrder Prompt - Should Return 1,2,4,5,3
+            Console.WriteLine("Here is the Tree in Traversal Pattern: 'PreOrder'");
+            Tree1.PrintPreOrder();
+            Console.WriteLine("\n");
+
+            // PostOrder Prompt - Should Return 1,2,4,5,3
+            Console.WriteLine("Here is the Tree in Traversal Pattern: 'PostOrder'");
+            Tree1.PrintPostOrder();
+            Console.WriteLine("\n");
         }
     }
 }
