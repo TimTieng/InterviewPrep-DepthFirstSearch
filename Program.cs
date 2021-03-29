@@ -6,10 +6,12 @@ namespace DepthFirstSearch
     {
         public class Node
         {
+            // Node Attributes
             public int key;
             public Node left;
             public Node right;
 
+            // Node Constructor
             public Node(int item)
             {
                 key = item;
@@ -18,7 +20,7 @@ namespace DepthFirstSearch
         }
         public class BinaryTree
         {
-            // root of Binary Tree
+            // Attribute -  root of type Node
             public Node root;
 
             public BinaryTree()
@@ -61,6 +63,7 @@ namespace DepthFirstSearch
             {
                 PrintPreOrder(root);
             }
+            // Method to print in PostOrder
             public void PrintPostOrder(Node node)
             {
                 if (node == null)
@@ -96,7 +99,7 @@ namespace DepthFirstSearch
             Tree1.PrintPreOrder();
             Console.WriteLine("\n");
 
-            // PostOrder Prompt - Should Return 1,2,4,5,3
+            // PostOrder Prompt - Should Return 4,5,2,3,1
             Console.WriteLine("Here is the Tree in Traversal Pattern: 'PostOrder'");
             Tree1.PrintPostOrder();
             Console.WriteLine("\n");
